@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Complex2
+
+on: push
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+    - run: date
+  macos:
+    runs-on: macos-latest
+    steps:
+    - run: date
+  depends:
+    needs: [windows, macos]
+    runs-on: ubuntu-latest
+    steps:
+    - run: date
+  
+  
